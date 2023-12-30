@@ -2,5 +2,5 @@
 
 <h2>Song database:</h2>
 {% for song in songs %}
-<a href="#">{{ song.title }}</a><br>
+<a href="{% url 'detail' song.id %}">{{ song.title }}</a><br>
 {% endfor %}

@@ -7,4 +7,7 @@ def home(request):
 
 def detail(request, song_id):
     song = get_object_or_404(Song, pk=song_id)
+    song_lyrics = song.lyrics.split("\r\n")
+    verse_length = (song_lyrics.index("V2") - song_lyrics.index("V1"))-1
+    print(verse_length)
     return render(request, 'song_viewer/detail.html', {'song':song})
